@@ -3,45 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>crush ko impress karo</title>
-    <!-- Favicon for different devices -->
+    <title>Make Your Choice 💝</title>
     <link rel="icon" href="https://i.ibb.co/JR8cpRgZ/android-chrome-512x512-png.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="https://i.ibb.co/JR8cpRgZ/android-chrome-512x512-png.png" sizes="16x16" type="image/png">
-    
-    <!-- For high-resolution screens, like Retina Display -->
-    <link rel="icon" href="https://i.ibb.co/JR8cpRgZ/android-chrome-512x512-png.png" sizes="64x64" type="image/png">
-    
-    <!-- Apple touch icon (for iOS devices) -->
-    <link rel="apple-touch-icon" href="https://i.ibb.co/JR8cpRgZ/android-chrome-512x512-png.png" sizes="180x180">
-    
-    <!-- Android Chrome icon -->
-    <link rel="icon" href="https://i.ibb.co/JR8cpRgZ/android-chrome-512x512-png.png" sizes="192x192" type="image/png">
-    
-    <!-- Windows 8/10 tiles for pinned sites -->
-    <meta name="msapplication-TileImage" content="https://i.ibb.co/JR8cpRgZ/android-chrome-512x512-png.png">
-    <meta name="msapplication-TileColor" content="#ffffff">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffd1ff, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            animation: fadeIn 0.5s ease-in;
+            position: relative;
+        }
+
+        .image {
+            margin-bottom: 2rem;
+        }
+
+        .img1 {
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            animation: pulse 2s infinite;
+        }
+
+        .msg {
+            margin-bottom: 2rem;
+        }
+
+        .msg p {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff4757;
+            margin-bottom: 1rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-holder {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            min-height: 60px;
+        }
+
+        button {
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            min-width: 120px;
+        }
+
+        .yes {
+            background: #4834d4;
+            color: white;
+        }
+
+        .none {
+            background: #ff4757;
+            color: white;
+            position: absolute;
+        }
+
+        .yes:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            .msg p {
+                font-size: 1.3rem;
+            }
+
+            .img1 {
+                width: 150px;
+                height: 150px;
+            }
+
+            button {
+                padding: 0.6rem 1.5rem;
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="image">
-            <img class="img1"
-                src="https://media.tenor.com/E3rdAXiaSosAAAAi/cat-heart.gif"
-
+            <img class="img1" src="https://media.tenor.com/E3rdAXiaSosAAAAi/cat-heart.gif" alt="Cat heart">
         </div>
         <div class="msg">
-            <p> BOHOT DENY KAR LIYA AB KARO DENY AUR DEKHNA KYA HOTA HAI 🤭🤭🤭🤭</p>
+            <p>BOHOT DENY KAR LIYA AB KARO DENY AUR DEKHNA KYA HOTA HAI 🤭🤭🤭🤭</p>
         </div>
         <div class="btn-holder">
-            <a href="yes.html"><button class="yes">
-                    Yes
-                </button></a>
-            <a href=""><button class="none">
-                    No
-                </button></a>
+            <a href="yes.html"><button class="yes">Yes</button></a>
+            <button class="none">No</button>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script>
+        let no = document.querySelector(".none");
+        no.onmouseover = () => {
+            no.style.position = "absolute";
+            no.style.top = Math.floor(Math.random() * 90 + 3) + "%";
+            no.style.left = Math.floor(Math.random() * 90 + 3) + "%";
+        }
+    </script>
 </body>
 </html>
