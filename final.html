@@ -4,108 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Make Your Choice 💝</title>
-    <link rel="icon" href="https://i.ibb.co/JR8cpRgZ/android-chrome-512x512-png.png" sizes="32x32" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom sound for button movement -->
+    <audio id="moveSound">
+        <source src="https://www.myinstants.com/media/sounds/erro.mp3" type="audio/mpeg">
+    </audio>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-pink-200 to-rose-200 flex justify-center items-center p-5 overflow-hidden">
+        <audio autoplay>
+        <source src="https://www.myinstants.com/media/sounds/tf_nemesis.mp3" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+    <div class="bg-white/95 rounded-3xl p-8 shadow-lg max-w-lg w-11/12 text-center animate-[fadeIn_0.5s_ease-in] relative">
+        <div class="mb-8">
+            <img 
+                src="https://media.tenor.com/E3rdAXiaSosAAAAi/cat-heart.gif" 
+                alt="Cat heart" 
+                class="w-48 h-48 md:w-52 md:h-52 object-contain mx-auto animate-[pulse_2s_infinite]"
+            >
+        </div>
+        <div class="mb-8">
+            <p class="text-2xl md:text-3xl font-bold text-red-500 drop-shadow-sm">
+                BOHOT DENY KAR LIYA AB KARO DENY AUR DEKHNA KYA HOTA HAI 🤭🤭🤭🤭
+            </p>
+        </div>
+        <div class="flex justify-center gap-4 min-h-[100px] relative">
+            <button 
+            id="yesButton"
+            onclick="window.location.href='yes.html';"
+            class="fixed px-8 py-3 text-lg font-bold text-white bg-indigo-600 rounded-full min-w-[120px] transition-all duration-300 hover:scale-105 hover:shadow-lg z-10"
+        >
+            Yes
+        </button>
+        
+            <button 
+                id="noButton"
+                class="fixed px-8 py-3 text-lg font-bold text-white bg-red-500 rounded-full min-w-[120px] transition-all duration-300 z-10"
+            >
+                No
+            </button>
+        </div>
+    </div>
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            min-height: 100vh;
-            background: linear-gradient(135deg, #ffd1ff, #fad0c4);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            overflow: hidden;
-        }
-
-        .container {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            width: 90%;
-            text-align: center;
-            animation: fadeIn 0.5s ease-in;
-            position: relative;
-        }
-
-        .image {
-            margin-bottom: 2rem;
-        }
-
-        .img1 {
-            width: 200px;
-            height: 200px;
-            object-fit: contain;
-            animation: pulse 2s infinite;
-        }
-
-        .msg {
-            margin-bottom: 2rem;
-        }
-
-        .msg p {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #ff4757;
-            margin-bottom: 1rem;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-holder {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            position: relative;
-            min-height: 60px;
-        }
-
-        button {
-            padding: 0.8rem 2rem;
-            font-size: 1.1rem;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            min-width: 120px;
-        }
-
-        .yes {
-            background: #4834d4;
-            color: white;
-        }
-
-        .none {
-            background: #ff4757;
-            color: white;
-            position: absolute;
-        }
-
-        .yes:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.1);
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -116,48 +57,91 @@
                 transform: translateY(0);
             }
         }
-
-        @media (max-width: 480px) {
-            .container {
-                padding: 1.5rem;
-            }
-
-            .msg p {
-                font-size: 1.3rem;
-            }
-
-            .img1 {
-                width: 150px;
-                height: 150px;
-            }
-
-            button {
-                padding: 0.6rem 1.5rem;
-                font-size: 1rem;
-            }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
         }
     </style>
-</head>
-<body>
-    <div class="container">
-        <div class="image">
-            <img class="img1" src="https://media.tenor.com/E3rdAXiaSosAAAAi/cat-heart.gif" alt="Cat heart">
-        </div>
-        <div class="msg">
-            <p>BOHOT DENY KAR LIYA AB KARO DENY AUR DEKHNA KYA HOTA HAI 🤭🤭🤭🤭</p>
-        </div>
-        <div class="btn-holder">
-            <a href="yes.html"><button class="yes">Yes</button></a>
-            <button class="none">No</button>
-        </div>
-    </div>
+
     <script>
-        let no = document.querySelector(".none");
-        no.onmouseover = () => {
-            no.style.position = "absolute";
-            no.style.top = Math.floor(Math.random() * 90 + 3) + "%";
-            no.style.left = Math.floor(Math.random() * 90 + 3) + "%";
+        const yesButton = document.getElementById('yesButton');
+        const noButton = document.getElementById('noButton');
+        const moveSound = document.getElementById('moveSound');
+
+        function getRandomPosition() {
+            const buttonWidth = noButton.offsetWidth;
+            const buttonHeight = noButton.offsetHeight;
+            const padding = 20; // Minimum padding from screen edges
+            
+            // Calculate maximum allowed positions
+            const maxX = window.innerWidth - buttonWidth - padding;
+            const maxY = window.innerHeight - buttonHeight - padding;
+            
+            return {
+                x: Math.random() * maxX + padding,
+                y: Math.random() * maxY + padding
+            };
         }
+
+        function moveNoButton() {
+            // Play sound effect
+            moveSound.currentTime = 0;
+            moveSound.play();
+
+            // Store the current position of the "No" button
+            const oldPosition = {
+                x: noButton.style.left,
+                y: noButton.style.top
+            };
+
+            // Move "No" button to a new random position
+            const newPosition = getRandomPosition();
+            noButton.style.left = `${newPosition.x}px`;
+            noButton.style.top = `${newPosition.y}px`;
+
+            // Move "Yes" button to the old position of "No"
+            if (oldPosition.x && oldPosition.y) {
+                yesButton.style.left = oldPosition.x;
+                yesButton.style.top = oldPosition.y;
+            }
+        }
+
+        // function handleYesClick() {
+        //     alert('Yay! You clicked Yes! 💖');
+        // }
+
+        function initializeButtons() {
+            const centerX = window.innerWidth / 2;
+            const centerY = window.innerHeight / 2;
+            const buttonSpacing = 100; // Space between buttons
+            
+            // Position buttons relative to the center
+            yesButton.style.left = `${centerX - buttonSpacing}px`;
+            yesButton.style.top = `${centerY}px`;
+            noButton.style.left = `${centerX + buttonSpacing}px`;
+            noButton.style.top = `${centerY}px`;
+            
+            // Ensure buttons are visible
+            yesButton.style.visibility = 'visible';
+            noButton.style.visibility = 'visible';
+        }
+
+        // Event listeners
+        noButton.addEventListener('mouseover', moveNoButton);
+        noButton.addEventListener('touchstart', (e) => {
+            e.preventDefault();
+            moveNoButton();
+        });
+
+        // Initialize button positions on load and resize
+        window.addEventListener('load', initializeButtons);
+        window.addEventListener('resize', initializeButtons);
+
+        // Prevent context menu on buttons
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('contextmenu', (e) => e.preventDefault());
+        });
     </script>
 </body>
 </html>
