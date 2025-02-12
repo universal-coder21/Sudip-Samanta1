@@ -3,36 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>crush ko impress karo</title>
-    <!-- Favicon for different devices -->
+    <title>Finally! 💕</title>
     <link rel="icon" href="https://i.ibb.co/JR8cpRgZ/android-chrome-512x512-png.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="https://i.ibb.co/JR8cpRgZ/android-chrome-512x512-png.png" sizes="16x16" type="image/png">
-    
-    <!-- For high-resolution screens, like Retina Display -->
-    <link rel="icon" href="https://i.ibb.co/JR8cpRgZ/android-chrome-512x512-png.png" sizes="64x64" type="image/png">
-    
-    <!-- Apple touch icon (for iOS devices) -->
-    <link rel="apple-touch-icon" href="https://i.ibb.co/JR8cpRgZ/android-chrome-512x512-png.png" sizes="180x180">
-    
-    <!-- Android Chrome icon -->
-    <link rel="icon" href="https://i.ibb.co/JR8cpRgZ/android-chrome-512x512-png.png" sizes="192x192" type="image/png">
-    
-    <!-- Windows 8/10 tiles for pinned sites -->
-    <meta name="msapplication-TileImage" content="https://i.ibb.co/JR8cpRgZ/android-chrome-512x512-png.png">
-    <meta name="msapplication-TileColor" content="#ffffff">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            animation: popIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .image {
+            margin-bottom: 2rem;
+        }
+
+        .img1 {
+            width: 250px;
+            height: 250px;
+            object-fit: contain;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .msg {
+            margin-bottom: 1rem;
+        }
+
+        .msg p {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff4757;
+            line-height: 1.4;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            .msg p {
+                font-size: 1.3rem;
+            }
+
+            .img1 {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="container">
         <div class="image">
-            <img class="img1" src="https://c.tenor.com/kjmMqPElTAAAAAAC/tenor.gif"
-
+            <img class="img1" src="https://c.tenor.com/kjmMqPElTAAAAAAC/tenor.gif" alt="Love celebration">
         </div>
         <div class="msg">
-            <p> I KNOW IT BABY , LET'S START A NEW LIFE 😘😘😘😘😘 </p>
-        </div>
-       
+            <p>I KNOW IT BABY, LET'S START A NEW LIFE 😘😘😘😘😘</p>
         </div>
     </div>
 </body>
